@@ -1,0 +1,81 @@
+# ==========================================================
+# Alice Red Team Workstation - Git Ignore
+# ==========================================================
+
+# OS / desktop junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Logs
+*.log
+logs/
+log/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# Sensitive / private material
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+*.ovpn
+*.conf.private
+*.secret
+*.secrets
+*.token
+*.tokens
+*.kdbx
+
+# Offensive workspace private data
+loot/
+Loot/
+targets/
+Targets/
+screenshots/
+Screenshots/
+evidence/
+Evidence/
+pcaps/
+*.pcap
+*.pcapng
+
+# Obsidian personal vault content
+.obsidian/
+Dashboard.md
+Welcome.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Local environment files
+.env
+.env.*
