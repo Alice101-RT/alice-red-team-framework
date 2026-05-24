@@ -88,6 +88,7 @@ cp "$PROJECT_DIR/dotfiles/zshrc" "$HOME/.zshrc"
 cp "$PROJECT_DIR/dotfiles/starship.toml" "$HOME/.config/starship/starship.toml"
 cp "$PROJECT_DIR/dotfiles/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 cp "$PROJECT_DIR/dotfiles/tmux.conf" "$HOME/.tmux.conf"
+cp "$PROJECT_DIR/dotfiles/nanorc" "$HOME/.nanorc"
 
 # ----------------------------------------------------------
 # Scripts
