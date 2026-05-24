@@ -1,0 +1,119 @@
+# Alice Red Team Workstation - Offensive Core Packages
+#
+# Purpose:
+# This file defines the base offensive security toolkit.
+# It is intentionally limited to general pentesting and OSCP-style tooling.
+#
+# Advanced Red Team tooling is documented separately in:
+# packages/redteam-arsenal.md
+#
+# Notes:
+# Some package names may require AUR, pipx, Go, or manual installation.
+# This file is a conceptual package list and will later be split by installer type.
+
+# ==========================================================
+# Network Discovery / Scanning
+# ==========================================================
+
+nmap
+masscan
+rustscan
+
+# ==========================================================
+# Network Utilities
+# ==========================================================
+
+netcat
+socat
+rlwrap
+tcpdump
+wireshark-qt
+tshark
+whois
+bind
+dnsutils
+traceroute
+inetutils
+proxychains-ng
+
+# ==========================================================
+# Web Enumeration
+# ==========================================================
+
+ffuf
+gobuster
+feroxbuster
+whatweb
+nikto
+dirsearch
+
+# ==========================================================
+# Web Testing / Proxy
+# ==========================================================
+
+burpsuite
+sqlmap
+
+# ==========================================================
+# Wordlists
+# ==========================================================
+
+seclists
+cewl
+crunch
+
+# ==========================================================
+# Passwords / Hashes
+# ==========================================================
+
+john
+hashcat
+hashcat-utils
+hashid
+
+# ==========================================================
+# File Transfer / Payload Support
+# ==========================================================
+
+curl
+wget
+python
+python-pip
+python-pipx
+upx
+mingw-w64
+wine
+
+# ==========================================================
+# Exploitation Framework
+# ==========================================================
+
+metasploit
+
+# ==========================================================
+# SMB / Windows / AD Basics
+# ==========================================================
+
+smbclient
+smbmap
+enum4linux-ng
+impacket
+evil-winrm
+netexec
+crackmapexec
+
+# ==========================================================
+# Privilege Escalation Helpers
+# ==========================================================
+
+linux-smart-enumeration
+linpeas
+winpeas
+
+# ==========================================================
+# Reporting / Evidence Helpers
+# ==========================================================
+
+flameshot
+spectacle
+exiftool
