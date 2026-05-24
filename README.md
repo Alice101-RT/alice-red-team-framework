@@ -68,6 +68,8 @@ The base installer handles:
 ### Modular Installers
 
 - `scripts/install-offensive-core` — installs the initial offensive security core tooling.
+- `scripts/install-web-api` — installs the Web / API testing module.
+- `scripts/install-ad-windows` — installs the Linux-side AD / Windows internal assessment module.
 
 Future modules may include:
 
@@ -95,6 +97,9 @@ Future modules may include:
 
 ### Package Lists
 
+- `packages/web-api-tools.md`
+- `packages/ad-windows-tools.md`
+- `packages/reversing-exploitdev.txt`
 - `packages/base-packages.txt`
 - `packages/official-packages.txt`
 - `packages/aur-packages.txt`
