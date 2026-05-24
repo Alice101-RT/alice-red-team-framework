@@ -1,0 +1,48 @@
+# Alice Red Team Workstation - Base Packages
+
+# Core
+git
+base-devel
+curl
+wget
+unzip
+zip
+p7zip
+tree
+less
+
+# Shell / Terminal
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+starship
+kitty
+tmux
+fastfetch
+btop
+
+# Modern CLI
+eza
+bat
+fzf
+ripgrep
+fd
+jq
+
+# Editors / Notes
+neovim
+nano
+obsidian
+
+# Fonts / Icons
+noto-fonts
+noto-fonts-emoji
+ttf-jetbrains-mono-nerd
+papirus-icon-theme
+breeze-icons
+
+# Python
+python
+python-pip
+python-pipx
