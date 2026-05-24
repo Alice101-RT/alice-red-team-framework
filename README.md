@@ -112,13 +112,18 @@ Future modules may include:
 - Report Template
 - Command Notes Template
 
-### Documentation
 
-- `docs/install.md`
-- `docs/workflow.md`
-- `docs/obsidian.md`
-- `docs/tmux.md`
-- `docs/kde-customization.md`
+## Documentation
+
+Detailed documentation is available in the `docs/` directory.
+
+- `docs/install.md` — manual installation guide
+- `docs/workflow.md` — operational workflow and target structure
+- `docs/obsidian.md` — Obsidian vault, templates and note-taking workflow
+- `docs/tmux.md` — tmux workflow, shortcuts and session layout
+- `docs/kde-customization.md` — KDE Plasma visual customization
+- `docs/project-structure.md` — repository architecture and maintenance rules
+
 ### Dotfiles
 
 - Zsh configuration
