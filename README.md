@@ -50,6 +50,8 @@ The objective is not to install hundreds of tools blindly, but to build a system
 ## Current Components
 ## Current Components
 
+Alice Red Team Workstation currently includes the following components:
+
 ### Base Installer
 
 - `install.sh` — installs the base Alice Red Team Workstation environment.
