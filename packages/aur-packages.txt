@@ -1,0 +1,16 @@
+# Alice Red Team Workstation - AUR Packages
+#
+# Packages expected to require AUR/yay installation.
+# This list is intentionally separated from official-packages.txt.
+
+ffuf
+feroxbuster
+whatweb
+seclists
+cewl
+crunch
+rustscan
+burpsuite
+evil-winrm
+enum4linux-ng
+smbmap
