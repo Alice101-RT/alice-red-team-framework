@@ -208,19 +208,3 @@ Alice Red Team Workstation is shared as a read-only public project so that other
 External pull requests, issues, discussions and feature requests are not accepted.
 
 Users are welcome to fork the repository and maintain their own versions under the terms of the license.
-
-
----
-
-## Roadmap
-
-- [ ] Add installation script
-- [ ] Add package list
-- [ ] Add KDE visual setup notes
-- [ ] Add Obsidian setup guide
-- [ ] Add tmux workflow guide
-- [ ] Add offensive tooling modules
-- [ ] Add Burp Suite setup
-- [ ] Add Python / pipx workflow
-- [ ] Add GitHub installation documentation
-- [ ] Consider Arch ISO profile in the future
