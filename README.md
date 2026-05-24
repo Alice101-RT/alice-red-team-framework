@@ -48,7 +48,77 @@ The objective is not to install hundreds of tools blindly, but to build a system
 ---
 
 ## Current Components
+## Current Components
 
+### Base Installer
+
+- `install.sh` — installs the base Alice Red Team Workstation environment.
+
+The base installer handles:
+
+- core packages
+- shell environment
+- Kitty configuration
+- Starship prompt
+- tmux configuration
+- scripts
+- Obsidian templates
+- workspace directories
+
+### Modular Installers
+
+- `scripts/install-offensive-core` — installs the initial offensive security core tooling.
+
+Future modules may include:
+
+- Active Directory / Windows tooling
+- Web / API tooling
+- Pivoting / tunneling tooling
+- Reversing / exploit development tooling
+- Purple Team / detection tooling
+- Cloud tooling
+- OT / ICS lab tooling
+
+### Dotfiles
+
+- `dotfiles/zshrc`
+- `dotfiles/starship.toml`
+- `dotfiles/kitty.conf`
+- `dotfiles/tmux.conf`
+- `dotfiles/nanorc`
+
+### Scripts
+
+- `scripts/alicebanner` — terminal banner for screenshots and workspace identity
+- `scripts/newtarget` — creates a structured tmux workspace and target directory
+- `scripts/install-offensive-core` — installs the offensive core toolkit
+
+### Package Lists
+
+- `packages/base-packages.txt`
+- `packages/official-packages.txt`
+- `packages/aur-packages.txt`
+- `packages/offensive-core.txt`
+- `packages/redteam-arsenal.md`
+- `packages/reversing-exploitdev.txt`
+
+### Obsidian Templates
+
+- Machine Template
+- Finding Template
+- Service Enumeration Template
+- Credentials Template
+- Exfil Simulation Template
+- Report Template
+- Command Notes Template
+
+### Documentation
+
+- `docs/install.md`
+- `docs/workflow.md`
+- `docs/obsidian.md`
+- `docs/tmux.md`
+- `docs/kde-customization.md`
 ### Dotfiles
 
 - Zsh configuration
