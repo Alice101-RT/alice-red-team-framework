@@ -1,0 +1,141 @@
+#!/bin/bash
+
+# ==========================================================
+# Alice Red Team Workstation - Reversing / ExploitDev Installer
+# ==========================================================
+
+set -e
+
+PINK="\033[1;35m"
+CYAN="\033[1;36m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+RED="\033[1;31m"
+RESET="\033[0m"
+
+echo -e "${PINK}"
+echo "    ___    __    ____________"
+echo "   /   |  / /   /  _/ ____/ /"
+echo "  / /| | / /    / // /   / / "
+echo " / ___ |/ /____/ // /___/ /___"
+echo "/_/  |_/_____/___/\____/_____/"
+echo -e "${RESET}"
+
+echo -e "${CYAN}ALICE RED TEAM WORKSTATION - REVERSING / EXPLOITDEV MODULE${RESET}"
+echo
+
+if ! command -v pacman >/dev/null 2>&1; then
+    echo -e "${RED}[!] pacman not found. This installer is intended for Arch Linux based systems.${RESET}"
+    exit 1
+fi
+
+if [ "$EUID" -eq 0 ]; then
+    echo -e "${RED}[!] Do not run this script as root.${RESET}"
+    echo -e "${YELLOW}Run it as your normal user. The script will ask for sudo when needed.${RESET}"
+    exit 1
+fi
+
+# ----------------------------------------------------------
+# Official packages
+# ----------------------------------------------------------
+
+echo -e "${PINK}[+] Installing official reversing / exploit development packages...${RESET}"
+
+sudo pacman -Syu --needed \
+    file \
+    binutils \
+    gdb \
+    strace \
+    ltrace \
+    radare2 \
+    cutter \
+    ghidra \
+    checksec \
+    ropper \
+    python \
+    python-pip \
+    python-pipx \
+    patchelf \
+    binwalk \
+    foremost \
+    yara \
+    upx \
+    nasm \
+    gcc \
+    make \
+    cmake \
+    git \
+    wget \
+    curl
+
+# ----------------------------------------------------------
+# AUR packages
+# ----------------------------------------------------------
+
+echo
+echo -e "${PINK}[+] Checking yay availability...${RESET}"
+
+if command -v yay >/dev/null 2>&1; then
+    echo -e "${PINK}[+] Installing optional AUR reversing tools where available...${RESET}"
+
+    yay -S --needed \
+        gef \
+        pwndbg \
+        ropgadget \
+        one_gadget \
+        seccomp-tools || true
+else
+    echo -e "${YELLOW}[!] yay is not installed. Skipping AUR-based tools.${RESET}"
+fi
+
+# ----------------------------------------------------------
+# pipx / Python tools
+# ----------------------------------------------------------
+
+echo
+echo -e "${PINK}[+] Installing pipx-based exploit development tools...${RESET}"
+
+python -m pipx ensurepath
+
+pipx install pwntools || true
+pipx install ropper || true
+pipx install ROPGadget || true
+
+# ----------------------------------------------------------
+# Workspace directories
+# ----------------------------------------------------------
+
+echo
+echo -e "${PINK}[+] Creating reversing / exploit development workspace directories...${RESET}"
+
+mkdir -p "$HOME/Tools/reversing"
+mkdir -p "$HOME/Tools/exploitdev"
+mkdir -p "$HOME/Tools/payload-analysis"
+mkdir -p "$HOME/Labs/Reversing"
+mkdir -p "$HOME/Labs/ExploitDev"
+mkdir -p "$HOME/Payloads"/{linux,windows,source,binaries}
+
+# ----------------------------------------------------------
+# Final message
+# ----------------------------------------------------------
+
+echo
+echo -e "${GREEN}[+] Reversing / Exploit Development module installation completed.${RESET}"
+echo
+echo -e "${CYAN}Recommended checks:${RESET}"
+echo "file --version"
+echo "gdb --version"
+echo "radare2 -v"
+echo "cutter --version"
+echo "ghidraRun"
+echo "checksec --help"
+echo "ropper --help"
+echo "ROPgadget --help"
+echo "python -c 'from pwn import *; print(\"pwntools OK\")'"
+echo "yara --version"
+echo
+echo -e "${YELLOW}Notes:${RESET}"
+echo "- Windows-only tools such as x64dbg, dnSpyEx, PE-bear, Detect It Easy and IDA Free are documented but not installed automatically."
+echo "- Use this module for vulnerability research, exploit validation, payload analysis and low-level technical analysis."
+echo "- Do not treat this as a CTF-only toolkit."
+echo
