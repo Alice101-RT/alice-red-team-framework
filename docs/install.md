@@ -100,6 +100,11 @@ Copy tmux configuration:
 
 `cp dotfiles/tmux.conf ~/.tmux.conf`
 
+Copy Nano configuration:
+
+`cp dotfiles/nanorc ~/.nanorc`
+ ÄÄ
+
 ---
 
 ## 5. Install Scripts
