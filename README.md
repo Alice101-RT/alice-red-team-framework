@@ -196,6 +196,20 @@ This project is intended for:
 
 Do not use this setup or any included workflow against systems without explicit authorization.
 
+
+---
+
+## Repository Policy
+
+This repository is public but not open to external contributions.
+
+Alice Red Team Workstation is shared as a read-only public project so that other users can study it, fork it, adapt it and build their own versions.
+
+External pull requests, issues, discussions and feature requests are not accepted.
+
+Users are welcome to fork the repository and maintain their own versions under the terms of the license.
+
+
 ---
 
 ## Roadmap
