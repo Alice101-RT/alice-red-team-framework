@@ -1,26 +1,63 @@
-# Created by newuser for 5.9
-# =========================
-# Alice Arch - ZSH Config
-# =========================
+# ==========================================================
+# Alice Red Team Workstation - ZSH Configuration
+# ==========================================================
+
+# -------------------------
+# Environment
+# -------------------------
 
 export EDITOR=nvim
 export VISUAL=nvim
 export LANG=en_US.UTF-8
+export PATH="$HOME/Scripts:$PATH"
 
+# -------------------------
 # History
+# -------------------------
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt inc_append_history
 
-# Completion
+# -------------------------
+# Zsh Completion System
+# -------------------------
+
 autoload -Uz compinit
 compinit
 
-# Basic aliases
+# Completion behavior
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%F{magenta}-- %d --%f'
+zstyle ':completion:*:messages' format '%F{cyan}-- %d --%f'
+zstyle ':completion:*:warnings' format '%F{red}-- no matches found --%f'
+
+# Colored completion list
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Show completion list/menu
+setopt auto_list
+setopt auto_menu
+setopt always_to_end
+setopt complete_in_word
+
+# Better completion navigation
+bindkey '^[[Z' reverse-menu-complete
+
+# -------------------------
+# Basic Aliases
+# -------------------------
+
 alias c='clear'
 alias cls='clear'
 alias update='sudo pacman -Syu'
@@ -28,34 +65,37 @@ alias install='sudo pacman -S'
 alias search='pacman -Ss'
 alias remove='sudo pacman -Rns'
 
+# -------------------------
 # Navigation
+# -------------------------
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# -------------------------
+# Modern Listing
+# -------------------------
+
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -lah --icons --group-directories-first'
+alias la='eza -la --icons --group-directories-first'
+alias lt='eza --tree --icons --group-directories-first'
+alias cat='bat'
+
+# -------------------------
 # System
+# -------------------------
+
 alias myip='ip -br a'
 alias ports='ss -tulpn'
 alias path='echo -e ${PATH//:/\\n}'
+alias ff='fastfetch'
+alias banner='alicebanner'
 
-# Red Team workspace
-alias labs='cd ~/Labs'
-alias tools='cd ~/Tools'
-alias notes='cd ~/Notes'
-alias loot='cd ~/Loot'
-alias reports='cd ~/Reports'
-alias payloads='cd ~/Payloads'
-alias wordlists='cd ~/Wordlists'
-alias scripts='cd ~/Scripts'
-
-# Create core workspace dirs if missing
-mkdir -p ~/Labs ~/Tools ~/Notes ~/Loot ~/Reports ~/Payloads ~/Wordlists ~/Scripts
-
-# Starship prompt
-eval "$(starship init zsh)"
-# =========================
-# Red Team Navigation
-# =========================
+# -------------------------
+# Red Team Workspace Navigation
+# -------------------------
 
 alias labs='cd ~/Labs'
 alias htb='cd ~/Labs/HTB'
@@ -75,34 +115,31 @@ alias reports='cd ~/Reports'
 alias payloads='cd ~/Payloads'
 alias wordlists='cd ~/Wordlists'
 alias scripts='cd ~/Scripts'
+alias projects='cd ~/Projects'
 
-# =========================
-# Useful Shortcuts
-# =========================
-
-alias c='clear'
-alias ll='ls -lah --color=auto'
-alias la='ls -la --color=auto'
-alias update='sudo pacman -Syu'
-alias install='sudo pacman -S'
-alias search='pacman -Ss'
-alias remove='sudo pacman -Rns'
-alias myip='ip -br a'
-alias ports='ss -tulpn'
-
-# Show system info on terminal start
-# fastfetch
-
-alias ff='fastfetch'
-
-# Custom scripts
-export PATH="$HOME/Scripts:$PATH"
-
-# =========================
-# tmux shortcuts
-# =========================
+# -------------------------
+# tmux Shortcuts
+# -------------------------
 
 alias tls='tmux ls'
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
 alias tn='tmux new -s'
+
+# -------------------------
+# Safety / Workspace Creation
+# -------------------------
+
+mkdir -p ~/Labs ~/Tools ~/Notes ~/Loot ~/Reports ~/Payloads ~/Wordlists ~/Scripts ~/Projects
+mkdir -p ~/Labs/{HTB,THM,PortSwigger,OSCP}
+mkdir -p ~/Tools/{recon,web,ad,privesc,postexploitation}
+mkdir -p ~/Wordlists/{web,passwords,usernames}
+mkdir -p ~/Payloads/{web,shells,windows,linux}
+mkdir -p ~/Loot/{creds,hashes,configs,screenshots,pcaps}
+mkdir -p ~/Reports/{templates,finished,drafts}
+
+# -------------------------
+# Starship Prompt
+# -------------------------
+
+eval "$(starship init zsh)"

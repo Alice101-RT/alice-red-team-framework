@@ -21,7 +21,7 @@ printf "${RESET}"
 
 printf "${CYAN}"
 cat << "SUB"
-              ALICE RED TEAM WORKSPACE
+              ALICE RED TEAM WORKSTATION
 SUB
 printf "${RESET}"
 
