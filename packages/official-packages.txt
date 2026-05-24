@@ -1,0 +1,129 @@
+# Alice Red Team Workstation - Official Arch Packages
+#
+# Purpose:
+# Packages expected to be installable with pacman from official Arch repositories.
+#
+# This list should remain conservative.
+# AUR, pipx, Go and manual tools are tracked separately.
+
+# ==========================================================
+# Core System / Build
+# ==========================================================
+
+git
+base-devel
+curl
+wget
+unzip
+zip
+7zip
+tree
+less
+man-db
+man-pages
+
+# ==========================================================
+# Shell / Terminal / Workflow
+# ==========================================================
+
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
+starship
+kitty
+tmux
+fastfetch
+btop
+eza
+bat
+fzf
+ripgrep
+fd
+jq
+
+# ==========================================================
+# Editors / Notes
+# ==========================================================
+
+nano
+neovim
+obsidian
+
+# ==========================================================
+# Fonts / Icons / KDE Visual Base
+# ==========================================================
+
+noto-fonts
+noto-fonts-emoji
+noto-fonts-cjk
+ttf-jetbrains-mono-nerd
+papirus-icon-theme
+breeze-icons
+
+# ==========================================================
+# Python
+# ==========================================================
+
+python
+python-pip
+python-pipx
+
+# ==========================================================
+# Network Utilities
+# ==========================================================
+
+nmap
+masscan
+tcpdump
+wireshark-qt
+wireshark-cli
+whois
+bind
+traceroute
+inetutils
+proxychains-ng
+openbsd-netcat
+socat
+rlwrap
+
+# ==========================================================
+# Web / Enumeration
+# ==========================================================
+
+gobuster
+nikto
+sqlmap
+
+# ==========================================================
+# Wordlists / Passwords / Hashes
+# ==========================================================
+
+john
+hashcat
+
+# ==========================================================
+# File / Metadata / Evidence
+# ==========================================================
+
+flameshot
+spectacle
+perl-image-exiftool
+
+# ==========================================================
+# Compatibility / Payload Support
+# ==========================================================
+
+upx
+mingw-w64-gcc
+wine
+mono
+
+# ==========================================================
+# Optional Heavy Frameworks
+# ==========================================================
+#
+# These may be available officially depending on repository state.
+# Keep here only if confirmed by pacman on the target system.
+
+metasploit
