@@ -1,6 +1,6 @@
 # Workflow
 
-Alice Red Team Workstation is built around a structured offensive workflow.
+Alice Red Team Framework is built around a structured offensive workflow.
 
 The goal is to avoid chaotic terminal usage and replace it with a repeatable operational process.
 

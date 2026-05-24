@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - AUR Packages
+# Alice Red Team Framework - AUR Packages
 #
 # Packages expected to require AUR/yay installation.
 # This list is intentionally separated from official-packages.txt.

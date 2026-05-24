@@ -1,8 +1,8 @@
-# Alice Red Team Workstation - Red Team Arsenal
+# Alice Red Team Framework - Red Team Arsenal
 
 This document maps tools by operational phase and installation method.
 
-Alice Red Team Workstation does not blindly install every offensive tool.  
+Alice Red Team Framework does not blindly install every offensive tool.  
 The goal is to keep the workstation modular, understandable and operationally disciplined.
 
 ---
@@ -388,7 +388,7 @@ This should remain a future optional module.
 
 ## Default Install Policy
 
-Alice Red Team Workstation should not install the full Red Team arsenal by default.
+Alice Red Team Framework should not install the full Red Team arsenal by default.
 
 Recommended install levels:
 

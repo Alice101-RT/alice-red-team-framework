@@ -1,6 +1,6 @@
-# Alice Red Team Workstation
+# Alice Red Team Framework
 
-**Alice Red Team Workstation** is a modular Arch Linux Red Team workstation focused on operator workflow, tmux, Kitty, Zsh, Obsidian templates and offensive security tooling.
+**Alice Red Team Framework** is a modular Arch Linux Red Team workstation focused on operator workflow, tmux, Kitty, Zsh, Obsidian templates and offensive security tooling.
 
 The project is designed as a reproducible and shareable workstation setup for authorized offensive security work, Red Team methodology, adversary emulation support, structured note-taking, technical reporting and operator productivity.
 
@@ -24,13 +24,13 @@ The goal of this project is to provide a clean, aesthetic and functional offensi
 
 This is not intended to be a bloated pentesting distribution.
 
-Alice Red Team Workstation is designed as a controlled, modular and documented workstation environment.
+Alice Red Team Framework is designed as a controlled, modular and documented workstation environment.
 
 ---
 
 ## Philosophy
 
-Alice Red Team Workstation follows a simple principle:
+Alice Red Team Framework follows a simple principle:
 
 **Workflow before tooling.**
 
@@ -55,7 +55,7 @@ The objective is not to install hundreds of tools blindly, but to build a system
 
 This repository is public but not open to external contributions.
 
-Alice Red Team Workstation is shared as a read-only public project so that other users can study it, fork it, adapt it and build their own versions.
+Alice Red Team Framework is shared as a read-only public project so that other users can study it, fork it, adapt it and build their own versions.
 
 External pull requests, issues, discussions and feature requests are not accepted.
 
@@ -65,7 +65,7 @@ Users are welcome to fork the repository and maintain their own versions under t
 
 ## Current Components
 
-Alice Red Team Workstation currently includes the following components.
+Alice Red Team Framework currently includes the following components.
 
 ### Base Workstation
 
@@ -171,7 +171,7 @@ Manual installation instructions are available in:
 
 ## Modular Installation
 
-Alice Red Team Workstation is designed to be modular.
+Alice Red Team Framework is designed to be modular.
 
 The base installer prepares the workstation. Additional modules can be installed separately depending on operational need.
 
@@ -224,7 +224,7 @@ This creates a structured tmux session and target workspace under:
 
 ## tmux Workflow
 
-Alice Red Team Workstation uses tmux to keep offensive work organized.
+Alice Red Team Framework uses tmux to keep offensive work organized.
 
 The default target session created by `newtarget` includes windows for:
 
@@ -283,7 +283,7 @@ Detailed Obsidian documentation is available in:
 
 ## C2 / Adversary Emulation
 
-Alice Red Team Workstation includes a C2 / adversary emulation support module.
+Alice Red Team Framework includes a C2 / adversary emulation support module.
 
 This module is intentionally conservative.
 
@@ -384,4 +384,4 @@ Created and maintained by:
 
 `Alice101-RT`
 
-Alice Red Team Workstation is shared publicly as a read-only project for study, adaptation and personal workstation reproducibility.
+Alice Red Team Framework is shared publicly as a read-only project for study, adaptation and personal workstation reproducibility.

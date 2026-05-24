@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Official Arch Packages
+# Alice Red Team Framework - Official Arch Packages
 #
 # Purpose:
 # Packages expected to be installable with pacman from official Arch repositories.

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# Alice Red Team Workstation - Offensive Core Installer
+# Alice Red Team Framework - Offensive Core Installer
 # ==========================================================
 
 set -e
@@ -21,7 +21,7 @@ echo " / ___ |/ /____/ // /___/ /___"
 echo "/_/  |_/_____/___/\____/_____/"
 echo -e "${RESET}"
 
-echo -e "${CYAN}ALICE RED TEAM WORKSTATION - OFFENSIVE CORE${RESET}"
+echo -e "${CYAN}ALICE RED TEAM FRAMEWORK - OFFENSIVE CORE${RESET}"
 echo
 
 if ! command -v pacman >/dev/null 2>&1; then

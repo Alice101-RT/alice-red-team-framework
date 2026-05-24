@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Exfiltration / Impact Validation Tools
+# Alice Red Team Framework - Exfiltration / Impact Validation Tools
 
 This document maps tools used for authorized exfiltration simulation, impact validation, egress testing and defensive control validation during Red Team operations or advanced penetration tests.
 

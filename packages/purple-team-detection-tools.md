@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Purple Team / Detection Tools
+# Alice Red Team Framework - Purple Team / Detection Tools
 
 This document maps tools used for adversary emulation, detection engineering, threat hunting, DFIR support and validation of defensive controls.
 

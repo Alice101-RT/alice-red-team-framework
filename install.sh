@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# Alice Red Team Workstation - Base Installer
+# Alice Red Team Framework - Base Installer
 # ==========================================================
 
 set -e
@@ -24,7 +24,7 @@ echo "     ██║  ██║███████╗██║╚████�
 echo "     ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝╚══════╝"
 echo -e "${RESET}"
 
-echo -e "${CYAN}ALICE RED TEAM WORKSTATION - BASE INSTALLER${RESET}"
+echo -e "${CYAN}ALICE RED TEAM FRAMEWORK - BASE INSTALLER${RESET}"
 echo
 
 # ----------------------------------------------------------
@@ -139,7 +139,7 @@ fi
 # ----------------------------------------------------------
 
 echo
-echo -e "${GREEN}[+] Alice Red Team Workstation base installation completed.${RESET}"
+echo -e "${GREEN}[+] Alice Red Team Framework base installation completed.${RESET}"
 echo
 echo -e "${CYAN}Next steps:${RESET}"
 echo "1. Open Kitty."

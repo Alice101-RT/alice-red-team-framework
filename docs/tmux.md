@@ -1,6 +1,6 @@
 # tmux Workflow
 
-tmux is the terminal multiplexer used by Alice Red Team Workstation to organize offensive security work inside structured terminal sessions.
+tmux is the terminal multiplexer used by Alice Red Team Framework to organize offensive security work inside structured terminal sessions.
 
 It allows multiple windows and panes to exist inside a single terminal, making it easier to manage reconnaissance, enumeration, shells, privilege escalation, notes and auxiliary services.
 
@@ -32,7 +32,7 @@ tmux provides a repeatable workspace for each target.
 
 A tmux session represents one workspace.
 
-In Alice Red Team Workstation, one target should usually have one tmux session.
+In Alice Red Team Framework, one target should usually have one tmux session.
 
 Example:
 
@@ -66,7 +66,7 @@ The default `newtarget` layout creates these windows:
 
 The default tmux prefix is usually `CTRL + B`.
 
-Alice Red Team Workstation changes it to:
+Alice Red Team Framework changes it to:
 
 `CTRL + A`
 

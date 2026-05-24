@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - C2 / Adversary Emulation Tools
+# Alice Red Team Framework - C2 / Adversary Emulation Tools
 
 This document maps tools and infrastructure used for Command and Control research, adversary emulation, controlled payload testing, detection validation and Red Team operations.
 
@@ -200,7 +200,7 @@ Required controls:
 
 ## 10. What Should Not Be Automated
 
-The Alice Red Team Workstation public installer should not automatically:
+The Alice Red Team Framework public installer should not automatically:
 
 - deploy C2 frameworks
 - start listeners

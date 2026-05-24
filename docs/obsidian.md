@@ -1,6 +1,6 @@
 # Obsidian Workflow
 
-Obsidian is used as the structured knowledge and documentation layer of Alice Red Team Workstation.
+Obsidian is used as the structured knowledge and documentation layer of Alice Red Team Framework.
 
 The terminal is used for execution.  
 tmux is used for operational organization.  
@@ -219,7 +219,7 @@ Examples:
 
 ## Included Templates
 
-Alice Red Team Workstation includes the following templates:
+Alice Red Team Framework includes the following templates:
 
 - `machine-template.md`
 - `finding-template.md`

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# Alice Red Team Workstation - Purple Team / Detection Installer
+# Alice Red Team Framework - Purple Team / Detection Installer
 # ==========================================================
 
 set -e
@@ -21,7 +21,7 @@ echo " / ___ |/ /____/ // /___/ /___"
 echo "/_/  |_/_____/___/\____/_____/"
 echo -e "${RESET}"
 
-echo -e "${CYAN}ALICE RED TEAM WORKSTATION - PURPLE TEAM / DETECTION MODULE${RESET}"
+echo -e "${CYAN}ALICE RED TEAM FRAMEWORK - PURPLE TEAM / DETECTION MODULE${RESET}"
 echo
 
 if ! command -v pacman >/dev/null 2>&1; then

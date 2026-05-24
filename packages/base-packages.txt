@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Base Packages
+# Alice Red Team Framework - Base Packages
 
 # Core
 git

@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - AD / Windows Internal Tools
+# Alice Red Team Framework - AD / Windows Internal Tools
 
 This document maps tools used for Active Directory, Windows internal assessments, SMB/LDAP/Kerberos enumeration, credential validation, attack path analysis and internal Red Team workflows.
 

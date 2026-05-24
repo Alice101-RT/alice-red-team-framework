@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Credentials / Secrets Tools
+# Alice Red Team Framework - Credentials / Secrets Tools
 
 This document maps tools used for credential discovery, hash handling, password auditing, secret detection and credential validation during authorized Red Team operations or security assessments.
 

@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Web / API Tools
+# Alice Red Team Framework - Web / API Tools
 
 This document maps tools used for web application testing, API assessment, content discovery, parameter discovery, vulnerability validation and attack surface analysis.
 

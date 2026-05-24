@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Offensive Core Packages
+# Alice Red Team Framework - Offensive Core Packages
 #
 # Purpose:
 # This file defines the base offensive security toolkit.

@@ -1,6 +1,6 @@
 # KDE Customization
 
-Alice Red Team Workstation uses KDE Plasma as the default desktop environment for the graphical workstation experience.
+Alice Red Team Framework uses KDE Plasma as the default desktop environment for the graphical workstation experience.
 
 The goal is to provide a clean, dark, cyberpunk/anime-inspired interface that remains usable for long technical sessions.
 
@@ -224,7 +224,7 @@ or:
 
 The banner identifies the workstation as:
 
-`ALICE RED TEAM WORKSTATION`
+`ALICE RED TEAM FRAMEWORK`
 
 It is intended for screenshots, presentation and workspace identity.
 

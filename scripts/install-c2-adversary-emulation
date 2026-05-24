@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================================
-# Alice Red Team Workstation - C2 / Adversary Emulation Support Installer
+# Alice Red Team Framework - C2 / Adversary Emulation Support Installer
 # ==========================================================
 
 set -e
@@ -21,7 +21,7 @@ echo " / ___ |/ /____/ // /___/ /___"
 echo "/_/  |_/_____/___/\____/_____/"
 echo -e "${RESET}"
 
-echo -e "${CYAN}ALICE RED TEAM WORKSTATION - C2 / ADVERSARY EMULATION SUPPORT${RESET}"
+echo -e "${CYAN}ALICE RED TEAM FRAMEWORK - C2 / ADVERSARY EMULATION SUPPORT${RESET}"
 echo
 
 if ! command -v pacman >/dev/null 2>&1; then

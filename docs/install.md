@@ -1,6 +1,6 @@
 # Manual Installation Guide
 
-This document describes the manual installation process for **Alice Red Team Workstation**.
+This document describes the manual installation process for **Alice Red Team Framework**.
 
 The recommended installation method for most users will be the automated installer.  
 The manual process is provided for users who want to understand, review, customize or troubleshoot each step of the setup.

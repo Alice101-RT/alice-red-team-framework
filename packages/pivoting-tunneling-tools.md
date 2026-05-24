@@ -1,4 +1,4 @@
-# Alice Red Team Workstation - Pivoting / Tunneling Tools
+# Alice Red Team Framework - Pivoting / Tunneling Tools
 
 This document maps tools used for pivoting, tunneling, internal routing, proxying and controlled access to segmented networks during approved Red Team operations or internal assessments.
 

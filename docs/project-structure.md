@@ -1,6 +1,6 @@
 # Project Structure
 
-This document explains the structure of the Alice Red Team Workstation repository.
+This document explains the structure of the Alice Red Team Framework repository.
 
 The project is designed to be modular, reproducible and easy to audit.
 
@@ -127,7 +127,7 @@ Current scripts:
 
 ## scripts/alicebanner
 
-`alicebanner` displays the Alice Red Team Workstation terminal banner.
+`alicebanner` displays the Alice Red Team Framework terminal banner.
 
 It is used for:
 
@@ -247,7 +247,7 @@ The `.gitignore` is not a substitute for operational discipline.
 
 ## Design Principles
 
-Alice Red Team Workstation follows these principles:
+Alice Red Team Framework follows these principles:
 
 - workflow before tooling
 - modular installation
