@@ -138,6 +138,17 @@ mkdir -p ~/Payloads/{web,shells,windows,linux}
 mkdir -p ~/Loot/{creds,hashes,configs,screenshots,pcaps}
 mkdir -p ~/Reports/{templates,finished,drafts}
 
+
+
+# -------------------------
+# Zsh Plugins
+# -------------------------
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+
 # -------------------------
 # Starship Prompt
 # -------------------------
