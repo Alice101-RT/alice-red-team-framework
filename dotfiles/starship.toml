@@ -1,0 +1,42 @@
+add_newline = true
+command_timeout = 1000
+
+format = """
+[╭─](bold #ff2a6d)$username[](fg:#ff2a6d bg:#1a1026)$hostname[](fg:#1a1026 bg:#01cdfe)$directory[](fg:#01cdfe bg:#0b0b12)$git_branch$git_status$python$cmd_duration
+[╰─](bold #ff2a6d)[❯](bold #ff2a6d)[❯](bold #b967ff)[❯](bold #01cdfe) """
+
+[username]
+show_always = true
+style_user = "bg:#ff2a6d fg:#0b0b12 bold"
+style_root = "bg:#ff004c fg:#0b0b12 bold"
+format = "[ $user ]($style)"
+
+[hostname]
+ssh_only = false
+style = "bg:#1a1026 fg:#ff7ad9 bold"
+format = "[ @$hostname ]($style)"
+
+[directory]
+style = "bg:#01cdfe fg:#0b0b12 bold"
+truncation_length = 3
+truncate_to_repo = false
+format = "[ $path ]($style)"
+
+[git_branch]
+symbol = " "
+style = "bold #fcee09"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bold #ff2a6d"
+format = "[$all_status$ahead_behind ]($style)"
+
+[python]
+symbol = " "
+style = "bold #05ffa1"
+format = "[ $symbol$version ]($style)"
+
+[cmd_duration]
+min_time = 1000
+style = "bold #f8f8f2"
+format = "[ took $duration ]($style)"

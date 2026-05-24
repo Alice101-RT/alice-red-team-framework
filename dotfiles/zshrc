@@ -1,0 +1,108 @@
+# Created by newuser for 5.9
+# =========================
+# Alice Arch - ZSH Config
+# =========================
+
+export EDITOR=nvim
+export VISUAL=nvim
+export LANG=en_US.UTF-8
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_dups
+setopt hist_ignore_space
+
+# Completion
+autoload -Uz compinit
+compinit
+
+# Basic aliases
+alias c='clear'
+alias cls='clear'
+alias update='sudo pacman -Syu'
+alias install='sudo pacman -S'
+alias search='pacman -Ss'
+alias remove='sudo pacman -Rns'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# System
+alias myip='ip -br a'
+alias ports='ss -tulpn'
+alias path='echo -e ${PATH//:/\\n}'
+
+# Red Team workspace
+alias labs='cd ~/Labs'
+alias tools='cd ~/Tools'
+alias notes='cd ~/Notes'
+alias loot='cd ~/Loot'
+alias reports='cd ~/Reports'
+alias payloads='cd ~/Payloads'
+alias wordlists='cd ~/Wordlists'
+alias scripts='cd ~/Scripts'
+
+# Create core workspace dirs if missing
+mkdir -p ~/Labs ~/Tools ~/Notes ~/Loot ~/Reports ~/Payloads ~/Wordlists ~/Scripts
+
+# Starship prompt
+eval "$(starship init zsh)"
+# =========================
+# Red Team Navigation
+# =========================
+
+alias labs='cd ~/Labs'
+alias htb='cd ~/Labs/HTB'
+alias thm='cd ~/Labs/THM'
+alias oscp='cd ~/Labs/OSCP'
+alias psw='cd ~/Labs/PortSwigger'
+
+alias tools='cd ~/Tools'
+alias recon='cd ~/Tools/recon'
+alias webtools='cd ~/Tools/web'
+alias adtools='cd ~/Tools/ad'
+alias privesc='cd ~/Tools/privesc'
+
+alias notes='cd ~/Notes'
+alias loot='cd ~/Loot'
+alias reports='cd ~/Reports'
+alias payloads='cd ~/Payloads'
+alias wordlists='cd ~/Wordlists'
+alias scripts='cd ~/Scripts'
+
+# =========================
+# Useful Shortcuts
+# =========================
+
+alias c='clear'
+alias ll='ls -lah --color=auto'
+alias la='ls -la --color=auto'
+alias update='sudo pacman -Syu'
+alias install='sudo pacman -S'
+alias search='pacman -Ss'
+alias remove='sudo pacman -Rns'
+alias myip='ip -br a'
+alias ports='ss -tulpn'
+
+# Show system info on terminal start
+# fastfetch
+
+alias ff='fastfetch'
+
+# Custom scripts
+export PATH="$HOME/Scripts:$PATH"
+
+# =========================
+# tmux shortcuts
+# =========================
+
+alias tls='tmux ls'
+alias ta='tmux attach -t'
+alias tk='tmux kill-session -t'
+alias tn='tmux new -s'

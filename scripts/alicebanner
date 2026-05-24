@@ -1,0 +1,45 @@
+#!/bin/bash
+
+clear
+
+PINK='\033[1;95m'
+MAGENTA='\033[1;35m'
+CYAN='\033[1;96m'
+DIM='\033[2;37m'
+RESET='\033[0m'
+
+printf "${PINK}"
+cat << "TITLE"
+      █████╗ ██╗     ██╗ ██████╗███████╗
+     ██╔══██╗██║     ██║██╔════╝██╔════╝
+     ███████║██║     ██║██║     █████╗
+     ██╔══██║██║     ██║██║     ██╔══╝
+     ██║  ██║███████╗██║╚██████╗███████╗
+     ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝╚══════╝
+TITLE
+printf "${RESET}"
+
+printf "${CYAN}"
+cat << "SUB"
+              ALICE RED TEAM WORKSPACE
+SUB
+printf "${RESET}"
+
+printf "${MAGENTA}"
+cat << "LINE"
+          Authorized Operations · Adversary Emulation
+LINE
+printf "${RESET}"
+
+echo
+printf "${MAGENTA}   host:${RESET}   alice-arch\n"
+printf "${CYAN}   role:${RESET}   red team workstation\n"
+printf "${MAGENTA}   shell:${RESET}  zsh + starship\n"
+printf "${CYAN}   term:${RESET}   kitty + tmux\n"
+printf "${MAGENTA}   flow:${RESET}   recon · enum · attack · shell · privesc · exfil · loot\n"
+printf "${CYAN}   roe:${RESET}    approved operations only\n"
+printf "${MAGENTA}   stack:${RESET}  kitty · zsh · tmux · obsidian\n"
+printf "${CYAN}   ops:${RESET}    newtarget · notes · loot · reports\n"
+echo
+printf "${DIM}   use: newtarget <target-name>  ·  tls  ·  ta <session>  ·  tk <session>${RESET}\n"
+echo
