@@ -130,8 +130,6 @@ alias tn='tmux new -s'
 # Safety / Workspace Creation
 # -------------------------
 
-mkdir -p ~/Labs ~/Tools ~/Notes ~/Loot ~/Reports ~/Payloads ~/Wordlists ~/Scripts ~/Projects
-mkdir -p ~/Labs/{HTB,THM,PortSwigger,OSCP}
 mkdir -p ~/Tools/{recon,web,ad,privesc,postexploitation}
 mkdir -p ~/Wordlists/{web,passwords,usernames}
 mkdir -p ~/Payloads/{web,shells,windows,linux}

@@ -67,7 +67,6 @@ echo -e "${PINK}[+] Creating workspace directories...${RESET}"
 
 mkdir -p "$HOME/Scripts"
 mkdir -p "$HOME/Projects"
-mkdir -p "$HOME/Labs"/{HTB,THM,PortSwigger,OSCP}
 mkdir -p "$HOME/Tools"/{recon,web,ad,privesc,postexploitation}
 mkdir -p "$HOME/Wordlists"/{web,passwords,usernames}
 mkdir -p "$HOME/Payloads"/{web,shells,windows,linux}
