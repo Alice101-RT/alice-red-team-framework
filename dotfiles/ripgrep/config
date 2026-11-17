@@ -1,0 +1,16 @@
+# Alice Red Team Framework - Pastel Ripgrep
+
+--color=auto
+
+# Matches: pastel pink
+--colors=match:fg:240,150,178
+--colors=match:style:bold
+
+# File paths: pastel cyan
+--colors=path:fg:165,207,213
+
+# Line numbers: lavender
+--colors=line:fg:198,179,230
+
+# Column numbers: pastel yellow
+--colors=column:fg:243,212,155

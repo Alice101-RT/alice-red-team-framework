@@ -2,22 +2,22 @@ add_newline = true
 command_timeout = 1000
 
 format = """
-[╭─](bold #ff2a6d)$username[](fg:#ff2a6d bg:#1a1026)$hostname[](fg:#1a1026 bg:#01cdfe)$directory[](fg:#01cdfe bg:#0b0b12)$git_branch$git_status$python$cmd_duration
-[╰─](bold #ff2a6d)[❯](bold #ff2a6d)[❯](bold #b967ff)[❯](bold #01cdfe) """
+[╭─](bold #F096B2)$username[](fg:#F096B2 bg:#1a1026)$hostname[](fg:#1a1026 bg:#A5CFD5)$directory[](fg:#A5CFD5 bg:#0b0b12)$git_branch$git_status$python$cmd_duration
+[╰─](bold #F096B2)[❯](bold #F096B2)[❯](bold #C6B3E6)[❯](bold #A5CFD5) """
 
 [username]
 show_always = true
-style_user = "bg:#ff2a6d fg:#0b0b12 bold"
+style_user = "bg:#F096B2 fg:#0b0b12 bold"
 style_root = "bg:#ff004c fg:#0b0b12 bold"
 format = "[ $user ]($style)"
 
 [hostname]
 ssh_only = false
-style = "bg:#1a1026 fg:#ff7ad9 bold"
+style = "bg:#1a1026 fg:#E99EBB bold"
 format = "[ @$hostname ]($style)"
 
 [directory]
-style = "bg:#01cdfe fg:#0b0b12 bold"
+style = "bg:#A5CFD5 fg:#0b0b12 bold"
 truncation_length = 3
 truncate_to_repo = false
 format = "[ $path ]($style)"
@@ -28,7 +28,7 @@ style = "bold #fcee09"
 format = "[ $symbol$branch ]($style)"
 
 [git_status]
-style = "bold #ff2a6d"
+style = "bold #F096B2"
 format = "[$all_status$ahead_behind ]($style)"
 
 [python]

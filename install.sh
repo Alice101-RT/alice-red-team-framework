@@ -52,11 +52,11 @@ echo -e "${PINK}[+] Installing base packages...${RESET}"
 
 sudo pacman -Syu --needed \
     git base-devel \
-    zsh zsh-completions starship \
-    kitty tmux fastfetch btop \
+    zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting \
+    starship kitty tmux fastfetch btop \
     tree less eza bat fzf \
-    neovim obsidian \
-    ripgrep fd unzip zip p7zip curl wget \
+    nano neovim obsidian \
+    ripgrep fd unzip zip 7zip curl wget \
     papirus-icon-theme breeze-icons
 
 # ----------------------------------------------------------
@@ -75,6 +75,28 @@ mkdir -p "$HOME/Reports"/{templates,finished,drafts}
 mkdir -p "$HOME/Notes/RedTeamVault/10_Templates"
 
 # ----------------------------------------------------------
+# Backup existing user configurations
+# ----------------------------------------------------------
+
+BACKUP_DIR="$HOME/.local/share/alice-red-team-framework/backups/$(date +%Y%m%d-%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+for config in \
+    "$HOME/.zshrc" \
+    "$HOME/.tmux.conf" \
+    "$HOME/.nanorc" \
+    "$HOME/.config/starship.toml" \
+    "$HOME/.config/kitty/kitty.conf"; do
+
+    if [ -f "$config" ]; then
+        mkdir -p "$BACKUP_DIR/$(dirname "${config#$HOME/}")"
+        cp -p "$config" "$BACKUP_DIR/${config#$HOME/}"
+    fi
+done
+
+echo "[+] Existing configurations backed up to: $BACKUP_DIR"
+
+# ----------------------------------------------------------
 # Dotfiles
 # ----------------------------------------------------------
 
@@ -84,7 +106,7 @@ mkdir -p "$HOME/.config/starship"
 mkdir -p "$HOME/.config/kitty"
 
 cp "$PROJECT_DIR/dotfiles/zshrc" "$HOME/.zshrc"
-cp "$PROJECT_DIR/dotfiles/starship.toml" "$HOME/.config/starship/starship.toml"
+cp "$PROJECT_DIR/dotfiles/starship.toml" "$HOME/.config/starship.toml"
 cp "$PROJECT_DIR/dotfiles/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 cp "$PROJECT_DIR/dotfiles/tmux.conf" "$HOME/.tmux.conf"
 cp "$PROJECT_DIR/dotfiles/nanorc" "$HOME/.nanorc"
@@ -134,6 +156,32 @@ else
 fi
 
 # ----------------------------------------------------------
+# ----------------------------------------------------------
+# Optional Alice Pastel Desktop Theme
+# ----------------------------------------------------------
+
+echo
+read -r -p "Install Alice Pastel Desktop Theme? [y/N] " INSTALL_THEME
+
+if [[ "$INSTALL_THEME" =~ ^[Yy]$ ]]; then
+    THEME_INSTALLER="$PROJECT_DIR/scripts/install-desktop-theme"
+
+    if [[ -x "$THEME_INSTALLER" ]]; then
+        bash "$THEME_INSTALLER"
+    else
+        echo "[!] Desktop theme installer not found or not executable."
+        exit 1
+    fi
+else
+    echo "[*] Keeping existing desktop appearance."
+fi
+
+
+# Alice Ripgrep configuration
+echo "[+] Installing Alice Pastel Ripgrep configuration..."
+mkdir -p "$HOME/.config/ripgrep"
+cp "$PROJECT_DIR/dotfiles/ripgrep/config" "$HOME/.config/ripgrep/config"
+
 # Final message
 # ----------------------------------------------------------
 

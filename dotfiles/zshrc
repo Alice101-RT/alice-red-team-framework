@@ -152,3 +152,64 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # -------------------------
 
 eval "$(starship init zsh)"
+
+
+# ALICE ADVANCED SYNTAX HIGHLIGHTING
+
+# Command types
+ZSH_HIGHLIGHT_STYLES[command]='fg=#A5CFD5,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#A5CFD5,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#C6B3E6,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#B5E0AD,bold'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#C6B3E6,bold'
+
+# Paths
+ZSH_HIGHLIGHT_STYLES[path]='fg=#F3D49B,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#F3D49B'
+
+# Arguments and strings
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#E99EBB'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#F096B2'
+
+# Options
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#F3D49B'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#C6B3E6'
+
+# Variables and operators
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=#A5CFD5'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#C6B3E6,bold'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=#F3D49B,bold'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#B5E0AD'
+
+# Errors
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#F38BA8,bold'
+
+# Autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#777B91'
+
+# Alice Pastel - Modern CLI
+alias ls='eza --icons=always --color=always --group-directories-first'
+alias ll='eza -lah --icons=always --color=always --group-directories-first'
+alias la='eza -a --icons=always --color=always --group-directories-first'
+alias lt='eza --tree --level=2 --icons=always --color=always'
+
+export CLICOLOR=1
+export EZA_COLORS='di=38;2;165;207;213:fi=38;2;239;239;241:ex=38;2;181;224;173:ln=38;2;198;179;230:*.md=38;2;240;150;178:*.sh=38;2;181;224;173:*.py=38;2;243;212;155'
+
+
+# Alice Pastel - File viewing and search
+
+# Syntax highlighting with bat
+export BAT_THEME="ansi"
+export BAT_STYLE="numbers,changes,header"
+
+alias ccat='bat --paging=never'
+alias preview='bat --paging=always'
+
+# Colored search results
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
+
+# Preserve ANSI colors in less
+export LESS='-R'
+export LESSHISTFILE='-'
+

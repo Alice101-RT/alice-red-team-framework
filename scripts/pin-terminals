@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT="$(mktemp --suffix=.js)"
+trap 'rm -f "$SCRIPT"' EXIT
+
+cat > "$SCRIPT" <<'JS'
+var ps = panels();
+var panel = ps.find(p => p.location === "bottom") || ps[0];
+
+if (!panel) {
+    throw new Error("No Plasma panel found");
+}
+
+var managers = panel.widgets().filter(w =>
+    w.type === "org.kde.plasma.icontasks" ||
+    w.type === "org.kde.plasma.taskmanager"
+);
+
+var manager = managers.length
+    ? managers[0]
+    : panel.addWidget("org.kde.plasma.icontasks");
+
+manager.currentConfigGroup = ["General"];
+
+var existing = manager.readConfig("launchers") || "";
+var launchers = existing
+    ? existing.split(",").filter(Boolean)
+    : [];
+
+[
+    "applications:kitty.desktop",
+    "applications:org.kde.konsole.desktop"
+].forEach(function(app) {
+    if (!launchers.includes(app)) {
+        launchers.push(app);
+    }
+});
+
+manager.writeConfig("launchers", launchers.join(","));
+manager.reloadConfig();
+
+print("Alice terminal launchers configured");
+JS
+
+qdbus6 org.kde.plasmashell \
+    /PlasmaShell \
+    org.kde.PlasmaShell.evaluateScript \
+    "$(cat "$SCRIPT")"
+
+echo "[+] Kitty and Konsole pinned to KDE panel."

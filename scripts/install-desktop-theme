@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+# Alice Red Team Framework
+# Pastel Desktop Theme Installer
+
+set -euo pipefail
+
+PINK='\033[1;35m'
+CYAN='\033[1;36m'
+RESET='\033[0m'
+
+if [[ $EUID -eq 0 ]]; then
+    echo "Do not run as root."
+    exit 1
+fi
+
+if [[ -z "${XDG_CURRENT_DESKTOP:-}" ]] || [[ ! "${XDG_CURRENT_DESKTOP,,}" == *kde* ]]; then
+    echo "Run this installer inside a KDE Plasma session."
+    exit 1
+fi
+
+echo -e "${PINK}ALICE RED TEAM FRAMEWORK${RESET}"
+echo -e "${CYAN}Pastel Desktop Installation${RESET}"
+
+# Dependencies
+sudo pacman -S --needed \
+    git \
+    ttf-jetbrains-mono-nerd
+
+# Backup KDE configuration
+BACKUP="$HOME/.local/share/alice-red-team-framework/backups/desktop-$(date +%Y%m%d-%H%M%S)"
+mkdir -p "$BACKUP"
+
+for file in kdeglobals kwinrc kcminputrc; do
+    if [[ -f "$HOME/.config/$file" ]]; then
+        cp -p "$HOME/.config/$file" "$BACKUP/"
+    fi
+done
+
+# Temporary build directory
+WORKDIR="$(mktemp -d)"
+trap 'rm -rf "$WORKDIR"' EXIT
+
+# Install Catppuccin Mocha Pink
+echo "[+] Installing Catppuccin Mocha Pink..."
+
+git clone --depth 1 \
+    https://github.com/catppuccin/kde.git \
+    "$WORKDIR/catppuccin"
+
+(
+    cd "$WORKDIR/catppuccin"
+    ./install.sh -q -n 1 3 2 auto
+)
+
+# Install Colloid Pastel Pink
+echo "[+] Installing Colloid Pastel Pink..."
+
+git clone --depth 1 \
+    https://github.com/SueDonham/Colloid-pastel-icons.git \
+    "$WORKDIR/colloid"
+
+(
+    cd "$WORKDIR/colloid"
+    ./install.sh -c pink <<< 'n'
+)
+
+# Apply icons after the global theme
+kwriteconfig6 \
+    --file kdeglobals \
+    --group Icons \
+    --key Theme \
+    "Colloid-Pastel-Pink-Dark"
+
+kbuildsycoca6
+
+echo
+echo -e "${CYAN}[+] Alice Pastel desktop installed.${RESET}"
+echo "[+] KDE backup: $BACKUP"
+echo "[+] Your current cursor was preserved."
+echo "[+] Your wallpaper was not changed."
+echo "[+] Log out and log back in to refresh all visual elements."

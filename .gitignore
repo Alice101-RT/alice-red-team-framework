@@ -79,3 +79,4 @@ out/
 # Local environment files
 .env
 .env.*
+install.sh.bak
