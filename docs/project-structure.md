@@ -264,10 +264,10 @@ Alice Red Team Framework follows these principles:
 
 Possible future installer modules:
 
-- `scripts/install-web-api`
+- `scripts/install-web-hunting`
 - `scripts/install-ad-windows`
 - `scripts/install-pivoting`
-- `scripts/install-reversing`
+- `scripts/install-binary-hunting`
 - `scripts/install-cloud`
 - `scripts/install-ot-ics`
 

@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Alice Red Team Framework
+# Binary Hunting / Vulnerability Research / Exploit Development
+
+if [[ $EUID -eq 0 ]]; then
+    echo "[!] Run as a normal user, not root."
+    exit 1
+fi
+
+command -v pacman >/dev/null 2>&1 || {
+    echo "[!] Arch Linux / pacman required."
+    exit 1
+}
+
+echo "[+] Alice Binary Hunting installation"
+
+sudo pacman -Syu --needed \
+    ghidra \
+    gdb \
+    pwndbg \
+    cutter \
+    radare2 \
+    python-pwntools \
+    afl++ \
+    checksec \
+    ropgadget \
+    ropper \
+    binwalk \
+    yara \
+    patchelf \
+    binutils \
+    file \
+    strace \
+    ltrace \
+    nasm \
+    gcc \
+    clang \
+    make \
+    cmake
+
+echo
+echo "[+] Binary Hunting installation completed."
+echo "[+] Ghidra, GDB, pwndbg, Cutter, AFL++ and reversing tools ready."

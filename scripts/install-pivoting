@@ -49,21 +49,37 @@ sudo pacman -Syu --needed \
     nftables
 
 echo
-echo -e "${PINK}[+] Checking yay availability...${RESET}"
+echo -e "${PINK}[+] Installing Chisel...${RESET}"
 
-if command -v yay >/dev/null 2>&1; then
-    echo -e "${PINK}[+] Installing optional AUR pivoting packages where available...${RESET}"
-
-    yay -S --needed \
-        chisel \
-        ligolo-ng \
-        frp \
-        gost || true
-else
-    echo -e "${YELLOW}[!] yay is not installed. Skipping AUR-based pivoting tools.${RESET}"
+if ! command -v chisel >/dev/null 2>&1; then
+    sudo pacman -S --needed go
+    go install github.com/jpillora/chisel@v1.13.0
 fi
 
-echo
+echo -e "${PINK}[+] Installing Ligolo-ng...${RESET}"
+
+LIGOLO_VERSION="0.9.2"
+LIGOLO_DIR="$HOME/Tools/ligolo-ng"
+
+mkdir -p "$LIGOLO_DIR/proxy" "$LIGOLO_DIR/agent"
+
+for component in proxy agent; do
+    archive="ligolo-ng_${component}_${LIGOLO_VERSION}_linux_amd64.tar.gz"
+
+    if [[ ! -x "$LIGOLO_DIR/$component/$component" ]]; then
+        curl -fL \
+            "https://github.com/nicocha30/ligolo-ng/releases/download/v${LIGOLO_VERSION}/${archive}" \
+            -o "$LIGOLO_DIR/$archive"
+
+        tar -xzf "$LIGOLO_DIR/$archive" \
+            -C "$LIGOLO_DIR/$component"
+
+        chmod +x "$LIGOLO_DIR/$component/$component"
+    fi
+done
+
+echo "[+] Chisel and Ligolo-ng prepared."
+
 echo -e "${PINK}[+] Creating pivoting / tunneling workspace directories...${RESET}"
 
 mkdir -p "$HOME/Tools/pivoting"

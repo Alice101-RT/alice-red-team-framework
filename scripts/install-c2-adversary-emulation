@@ -75,25 +75,12 @@ sudo pacman -Syu --needed \
     unzip
 
 # ----------------------------------------------------------
-# Docker group
+# Docker service management
 # ----------------------------------------------------------
 
-echo
-echo -e "${PINK}[+] Checking Docker service...${RESET}"
-
-sudo systemctl enable docker || true
-
-echo
-echo -e "${YELLOW}[*] Docker has been enabled but not started automatically by this script.${RESET}"
-echo -e "${YELLOW}[*] Start it manually with: sudo systemctl start docker${RESET}"
-
-if groups "$USER" | grep -q '\bdocker\b'; then
-    echo -e "${GREEN}[+] User already belongs to docker group.${RESET}"
-else
-    echo -e "${YELLOW}[*] Adding user to docker group for local lab usage.${RESET}"
-    sudo usermod -aG docker "$USER"
-    echo -e "${YELLOW}[!] Log out and log back in for docker group changes to apply.${RESET}"
-fi
+echo "[*] Docker is managed manually."
+echo "[*] Start when needed: sudo systemctl start docker"
+echo "[*] No privileged Docker group membership is added."
 
 # ----------------------------------------------------------
 # Workspace directories
@@ -108,8 +95,6 @@ mkdir -p "$HOME/Tools/c2/manual"
 mkdir -p "$HOME/Tools/adversary-emulation/manual"
 mkdir -p "$HOME/Tools/c2/infrastructure"
 mkdir -p "$HOME/Tools/c2/payload-analysis"
-mkdir -p "$HOME/Labs/AdversaryEmulation"
-mkdir -p "$HOME/Labs/C2"
 mkdir -p "$HOME/Reports/adversary-emulation"
 
 # ----------------------------------------------------------

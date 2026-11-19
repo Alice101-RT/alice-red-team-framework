@@ -214,7 +214,7 @@ High-risk actions:
 
 A future module should be created as:
 
-`scripts/install-web-api`
+`scripts/install-web-hunting`
 
 The installer should separate:
 

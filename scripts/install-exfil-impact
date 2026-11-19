@@ -86,10 +86,10 @@ fi
 echo
 echo -e "${PINK}[+] Creating exfiltration / evidence workspace directories...${RESET}"
 
+mkdir -p "$HOME/Scripts"
 mkdir -p "$HOME/Tools/exfil"
 mkdir -p "$HOME/Tools/evidence"
 mkdir -p "$HOME/Tools/egress-testing"
-mkdir -p "$HOME/Labs/ExfilImpact"
 mkdir -p "$HOME/Loot/exfil"
 mkdir -p "$HOME/Loot/markers"
 mkdir -p "$HOME/Loot/hashes"

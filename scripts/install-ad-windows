@@ -83,10 +83,10 @@ echo -e "${PINK}[+] Installing pipx-based AD / Windows tools...${RESET}"
 
 python -m pipx ensurepath
 
-pipx install impacket || true
-pipx install netexec || true
+echo "[*] Impacket is managed by Pacman."
+command -v nxc >/dev/null 2>&1 || pipx install git+https://github.com/Pennyw0rth/NetExec
 pipx install bloodhound || true
-pipx install certipy-ad || true
+command -v certipy >/dev/null 2>&1 || pipx install certipy-ad
 pipx install ldapdomaindump || true
 pipx install adidnsdump || true
 
@@ -120,6 +120,13 @@ mkdir -p "$HOME/Tools/windows/manual"
 mkdir -p "$HOME/Tools/windows/collectors"
 
 # ----------------------------------------------------------
+
+# Evil-WinRM (RubyGems)
+if ! command -v evil-winrm >/dev/null 2>&1; then
+    sudo pacman -S --needed ruby
+    gem install erb evil-winrm --user-install
+fi
+
 # Final message
 # ----------------------------------------------------------
 

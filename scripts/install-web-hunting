@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+
+# Alice Red Team Framework
+# Web Hunting / Bug Bounty / API Security
+
+set -euo pipefail
+
+PINK='\033[1;35m'
+CYAN='\033[1;36m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+RESET='\033[0m'
+
+info() {
+    printf "${CYAN}[+] %s${RESET}\n" "$1"
+}
+
+fail() {
+    printf "${RED}[!] %s${RESET}\n" "$1" >&2
+    exit 1
+}
+
+if [[ $EUID -eq 0 ]]; then
+    fail "Run as a normal user, not root."
+fi
+
+command -v pacman >/dev/null 2>&1 ||
+    fail "This installer requires Arch Linux."
+
+command -v yay >/dev/null 2>&1 ||
+    fail "Yay is required for the AUR components."
+
+info "Alice Red Team Framework - Web Hunting"
+
+# --------------------------------------------------
+# Official Arch packages
+# --------------------------------------------------
+
+info "Installing official packages"
+
+sudo pacman -Syu --needed \
+    git \
+    go \
+    python \
+    python-pipx \
+    curl \
+    wget \
+    jq \
+    gobuster \
+    nikto \
+    sqlmap
+
+# --------------------------------------------------
+# AUR tools
+# --------------------------------------------------
+
+info "Installing AUR tools"
+
+yay -S --needed \
+    burpsuite \
+    ffuf \
+    feroxbuster \
+    seclists
+
+# --------------------------------------------------
+# ProjectDiscovery / Go
+# --------------------------------------------------
+
+info "Installing ProjectDiscovery tools"
+
+export PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
+
+go install github.com/projectdiscovery/httpx/cmd/httpx@latest
+go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+
+# --------------------------------------------------
+# XSS research
+# --------------------------------------------------
+
+info "Installing Dalfox"
+
+go install github.com/hahwul/dalfox/v2@latest
+
+# --------------------------------------------------
+# HTTP parameter discovery
+# --------------------------------------------------
+
+info "Installing Arjun"
+
+pipx install arjun --skip-existing
+
+# --------------------------------------------------
+# PATH configuration
+# --------------------------------------------------
+
+info "Configuring user executable paths"
+
+mkdir -p "$HOME/.config"
+
+if [[ -f "$HOME/.zshrc" ]]; then
+    for line in \
+        'export PATH="$HOME/go/bin:$PATH"' \
+        'export PATH="$HOME/.local/bin:$PATH"'
+    do
+        grep -qxF "$line" "$HOME/.zshrc" ||
+            printf '%s\n' "$line" >> "$HOME/.zshrc"
+    done
+fi
+
+# --------------------------------------------------
+# Final summary
+# --------------------------------------------------
+
+echo
+printf "${GREEN}Alice Web Hunting installation completed.${RESET}\n"
+echo
+
+for tool in \
+    ffuf \
+    feroxbuster \
+    burpsuite \
+    httpx \
+    subfinder \
+    katana \
+    dnsx \
+    nuclei \
+    arjun \
+    dalfox \
+    gobuster \
+    nikto \
+    sqlmap
+do
+    if command -v "$tool" >/dev/null 2>&1; then
+        printf "[OK] %s\n" "$tool"
+    else
+        printf "[CHECK] %s is not available in the current PATH\n" "$tool"
+    fi
+done
+
+echo
+echo "Web Hunting module ready."
+echo "Use only against authorized targets."

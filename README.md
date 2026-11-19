@@ -76,11 +76,11 @@ Alice Red Team Framework currently includes the following components.
 ### Modular Installers
 
 - `scripts/install-offensive-core` — installs the initial offensive security core tooling.
-- `scripts/install-web-api` — installs the Web / API testing module.
+- `scripts/install-web-hunting` — installs the Web / API testing module.
 - `scripts/install-ad-windows` — installs the Linux-side AD / Windows internal assessment module.
 - `scripts/install-pivoting` — installs pivoting and tunneling support tools.
 - `scripts/install-credentials` — installs credentials, hashes and secrets tooling.
-- `scripts/install-reversing` — installs reversing, exploit development and vulnerability research tooling.
+- `scripts/install-binary-hunting` — installs reversing, exploit development and vulnerability research tooling.
 - `scripts/install-exfil-impact` — installs exfiltration simulation and impact validation support tools.
 - `scripts/install-c2-adversary-emulation` — installs safe support dependencies for C2 and adversary emulation workflows.
 
@@ -112,11 +112,11 @@ Alice Red Team Framework currently includes the following components.
 - `scripts/alicebanner` — terminal banner for screenshots and workspace identity.
 - `scripts/newtarget` — creates a structured tmux workspace and target directory.
 - `scripts/install-offensive-core` — installs the offensive core toolkit.
-- `scripts/install-web-api` — installs the Web / API module.
+- `scripts/install-web-hunting` — installs the Web / API module.
 - `scripts/install-ad-windows` — installs the AD / Windows internal module.
 - `scripts/install-pivoting` — installs pivoting and tunneling support tooling.
 - `scripts/install-credentials` — installs credentials and secrets tooling.
-- `scripts/install-reversing` — installs reversing and exploit development tooling.
+- `scripts/install-binary-hunting` — installs reversing and exploit development tooling.
 - `scripts/install-exfil-impact` — installs exfiltration and impact validation support tooling.
 - `scripts/install-c2-adversary-emulation` — installs safe C2/adversary emulation support dependencies.
 
@@ -174,11 +174,11 @@ The base installer prepares the workstation. Additional modules can be installed
 Available modules:
 
 - `scripts/install-offensive-core`
-- `scripts/install-web-api`
+- `scripts/install-web-hunting`
 - `scripts/install-ad-windows`
 - `scripts/install-pivoting`
 - `scripts/install-credentials`
-- `scripts/install-reversing`
+- `scripts/install-binary-hunting`
 - `scripts/install-exfil-impact`
 - `scripts/install-c2-adversary-emulation`
 
