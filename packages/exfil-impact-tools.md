@@ -207,7 +207,6 @@ Evidence should include:
 
 ---
 
-## 6. Detection Validation
 
 Exfiltration simulation should answer:
 

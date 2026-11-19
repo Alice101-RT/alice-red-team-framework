@@ -268,7 +268,6 @@ Possible future installer modules:
 - `scripts/install-ad-windows`
 - `scripts/install-pivoting`
 - `scripts/install-reversing`
-- `scripts/install-purple-team`
 - `scripts/install-cloud`
 - `scripts/install-ot-ics`
 
@@ -277,7 +276,6 @@ Possible future documentation:
 - `docs/web-api.md`
 - `docs/active-directory.md`
 - `docs/reversing-exploitdev.md`
-- `docs/purple-team.md`
 - `docs/cloud.md`
 - `docs/ot-ics.md`
 

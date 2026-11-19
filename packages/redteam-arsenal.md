@@ -266,7 +266,6 @@ These tools are sensitive and should not be installed by default.
 | Havoc | C2 framework | GitHub/manual | advanced/sensitive |
 | Covenant | C2 framework | GitHub/manual | advanced/sensitive |
 | Metasploit | framework with session handling | official | core/advanced |
-| Caldera | adversary emulation | GitHub/manual | purple-team |
 
 Notes:
 
@@ -276,7 +275,6 @@ Notes:
 
 ---
 
-## 9. Detection Engineering / Purple Team
 
 Purpose:
 
@@ -400,7 +398,6 @@ Recommended install levels:
 | ad-windows | AD and Windows internal assessment tools |
 | pivoting | tunneling and internal movement tools |
 | credentials | hashes, secrets and credential validation |
-| purple-team | detection engineering and adversary emulation |
 | c2 | optional/sensitive C2 tooling |
 | cloud | cloud assessment tools |
 | ot-ics | future OT/ICS lab tooling |

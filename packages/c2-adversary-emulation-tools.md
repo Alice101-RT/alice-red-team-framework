@@ -1,6 +1,5 @@
 # Alice Red Team Framework - C2 / Adversary Emulation Tools
 
-This document maps tools and infrastructure used for Command and Control research, adversary emulation, controlled payload testing, detection validation and Red Team operations.
 
 This module is sensitive.
 
@@ -12,8 +11,6 @@ This module supports:
 - C2 infrastructure planning
 - payload behavior analysis
 - callback infrastructure review
-- detection validation
-- purple team exercises
 - cleanup planning
 - operational documentation
 
@@ -48,12 +45,10 @@ Before using any C2 or adversary emulation tool, document:
 | Item | Value |
 |---|---|
 | Approved | yes/no |
-| Operation type | lab / purple team / internal assessment / Red Team |
 | Allowed payload types | |
 | Allowed callback infrastructure | |
 | Allowed target systems | |
 | Allowed time window | |
-| Blue Team awareness | blind / collaborative / purple team |
 | Logging requirements | |
 | Cleanup requirements | |
 | Kill switch defined | yes/no |
@@ -71,7 +66,6 @@ These tools are powerful and should not be installed automatically by the defaul
 | Havoc | C2 framework | manual / GitHub | advanced / sensitive |
 | Covenant | .NET-focused C2 framework | manual / GitHub | advanced / sensitive |
 | Metasploit | exploitation framework with session handling | official | core / advanced |
-| Caldera | adversary emulation platform | manual / GitHub | purple team |
 | Prelude Operator | adversary emulation platform | manual | optional |
 
 Notes:
@@ -98,7 +92,6 @@ Use cases:
 - map procedures to MITRE ATT&CK
 - test endpoint telemetry
 - test SIEM correlation
-- perform purple team exercises
 
 ---
 
@@ -270,4 +263,3 @@ Document:
 
 This module is part of a Red Team framework, not a generic exploitation toolkit.
 
-It exists to support controlled adversary emulation, detection validation and professional Red Team operations.

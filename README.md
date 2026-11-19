@@ -46,7 +46,6 @@ The objective is not to install hundreds of tools blindly, but to build a system
 - evidence collection
 - reporting
 - knowledge management
-- detection validation
 - modular tooling
 
 ---
@@ -82,7 +81,6 @@ Alice Red Team Framework currently includes the following components.
 - `scripts/install-pivoting` — installs pivoting and tunneling support tools.
 - `scripts/install-credentials` — installs credentials, hashes and secrets tooling.
 - `scripts/install-reversing` — installs reversing, exploit development and vulnerability research tooling.
-- `scripts/install-purple-team` — installs Purple Team and detection engineering support tools.
 - `scripts/install-exfil-impact` — installs exfiltration simulation and impact validation support tools.
 - `scripts/install-c2-adversary-emulation` — installs safe support dependencies for C2 and adversary emulation workflows.
 
@@ -97,7 +95,6 @@ Alice Red Team Framework currently includes the following components.
 - `packages/pivoting-tunneling-tools.md` — pivoting and tunneling tooling map.
 - `packages/credentials-secrets-tools.md` — credentials and secrets tooling map.
 - `packages/reversing-exploitdev.txt` — reversing, exploit development and vulnerability research package list.
-- `packages/purple-team-detection-tools.md` — Purple Team and detection tooling map.
 - `packages/exfil-impact-tools.md` — exfiltration simulation and impact validation tooling map.
 - `packages/c2-adversary-emulation-tools.md` — C2 and adversary emulation tooling map.
 - `packages/redteam-arsenal.md` — broader Red Team arsenal roadmap and classification map.
@@ -120,7 +117,6 @@ Alice Red Team Framework currently includes the following components.
 - `scripts/install-pivoting` — installs pivoting and tunneling support tooling.
 - `scripts/install-credentials` — installs credentials and secrets tooling.
 - `scripts/install-reversing` — installs reversing and exploit development tooling.
-- `scripts/install-purple-team` — installs Purple Team and detection tooling.
 - `scripts/install-exfil-impact` — installs exfiltration and impact validation support tooling.
 - `scripts/install-c2-adversary-emulation` — installs safe C2/adversary emulation support dependencies.
 
@@ -183,7 +179,6 @@ Available modules:
 - `scripts/install-pivoting`
 - `scripts/install-credentials`
 - `scripts/install-reversing`
-- `scripts/install-purple-team`
 - `scripts/install-exfil-impact`
 - `scripts/install-c2-adversary-emulation`
 
@@ -307,7 +302,6 @@ The project supports exfiltration simulation and impact validation using:
 - defined channels
 - volume limits
 - evidence collection
-- detection validation
 - cleanup documentation
 
 The exfiltration module does not execute transfers automatically.
